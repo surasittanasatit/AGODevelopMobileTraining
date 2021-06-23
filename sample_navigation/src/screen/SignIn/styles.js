@@ -1,4 +1,6 @@
 const React = require('react-native')
+import { ifIphoneX } from 'react-native-iphone-x-helper'
+
 const { Dimensions, Platform } = React
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get("window");
 
@@ -10,48 +12,32 @@ export default {
     section: {
         width: '100%',
         paddingHorizontal: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
         marginTop: 40,
     },
     logo: {
         marginVertical: 20,
+        alignItems: 'center',
     },
     boxInput: {
         width: '100%',
         backgroundColor: '#FFFFFF',
-        marginVertical: 3
+        marginVertical: 3,
+        borderRadius: 10,
     },
     signBg: {
         width: '100%',
-        backgroundColor: '#FFFFFF',
-        elevation: 10,
-        shadowOffset: {
-            width: 15,
-            height: 15
-        },
         shadowColor: '#999',
         shadowOpacity: 0.1,
         shadowRadius: 0,
         marginTop: 5,
-        ...Platform.select({
-            ios: {
-                shadowOffset: {
-                    width: 5,
-                    height: 5
-                },
-            },
-        }),
     },
     row: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: 10
     },
     textInput: {
         width: '90%',
         fontSize: 0.045 * viewportWidth,
-        paddingVertical: 15,
         paddingLeft: 10,
     },
     btn: {
@@ -59,7 +45,8 @@ export default {
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: 'rgba(236, 92, 2, 1)',
-        padding: 15
+        padding: 10,
+        borderRadius: 10,
     },
     btnText: {
         fontSize: 0.045 * viewportWidth,
@@ -72,8 +59,8 @@ export default {
         //textTransform: 'uppercase'
     },
     notifyChecked: {
-        height: 20,
-        width: 20,
+        height: 18,
+        width: 18,
     },
     notifyText: {
         color: "#FFFFFF",
@@ -81,4 +68,27 @@ export default {
         fontSize: 0.045 * viewportWidth,
         marginLeft: 10,
     },
+    btnEye: {
+        position: "absolute",
+        right: 10
+    },
+    iconColor: {
+        fontSize: 0.05 * viewportWidth,
+        color: 'rgba(0, 0, 0, 1)',
+    },
+    boxIcon: {
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+        height: 50,
+        width: '10%'
+    },
+    textTitle:{
+        color: "#FFFFFF",
+        textAlign: 'center',
+        fontSize: 0.065 * viewportWidth,
+        fontWeight: 'bold',
+    }
 }

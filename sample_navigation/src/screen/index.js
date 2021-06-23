@@ -15,6 +15,8 @@ import DrawerContent from '@component/Menu/Left'
 /* Screens */
 import Home from '@screen/Home'
 import SignIn from '@screen/SignIn'
+import CarDetail from '@screen/CarDetail'
+import Information from '@screen/Information'
 
 /* Navigation */
 import { navigationRef } from '@utility/navigation'
@@ -57,6 +59,8 @@ export default class App extends React.Component {
                     <Stack.Navigator initialRouteName='SignIn' headerMode='none'>
                         <Stack.Screen name='Drawer' component={DrawerRoot} />
                         <Stack.Screen name='SignIn' component={SignIn} options={options} />
+                        <Stack.Screen name='CarDetail' component={CarDetail} options={options} />
+                        <Stack.Screen name='Information' component={Information} options={options} />
                     </Stack.Navigator>
                 </NavigationContainer>
             </StoreProvider>

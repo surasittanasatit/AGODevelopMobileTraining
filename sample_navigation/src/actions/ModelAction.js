@@ -1,8 +1,8 @@
 export const modelAction = {
-    getActionSelectTabMenuIndex: tabmenuindex => {
+    getActionCarData: cardata => {
         return {
-            type: "TAB_MENU_INDEX",
-            payload: tabmenuindex,
+            type: "CarData",
+            payload: cardata,
         };
     },
 };

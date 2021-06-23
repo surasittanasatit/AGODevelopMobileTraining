@@ -1,12 +1,12 @@
 const STATE_INIT = {
-    tabmenuindex: 0,
+    cardata: [],
 };
 
 export const ModelReducer = (state = STATE_INIT, action) => {
-    if (action.type == "TAB_MENU_INDEX") {
+    if (action.type == "CarData") {
         return {
             ...state,
-            tabmenuindex: action.payload
+            cardata: action.payload
         };
     }
     return state;
