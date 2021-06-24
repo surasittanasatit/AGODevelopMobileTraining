@@ -34,7 +34,14 @@ const Entry = [
         location: 'New York, US',
         date: '24/06/2021',
         image: 'https://houseofhargrove.com/wp-content/uploads/2017/10/Beautiful-Exteriors1.jpg',
+    },    {
+        title: 'i10 Santro',
+        price: '$4,850,000',
+        location: 'New York, US',
+        date: '24/06/2021',
+        image: 'https://houseofhargrove.com/wp-content/uploads/2017/10/Beautiful-Exteriors1.jpg',
     },
+
 ]
 
 export default Entry

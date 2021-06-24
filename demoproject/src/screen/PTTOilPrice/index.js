@@ -26,6 +26,7 @@ class index extends Component {
     if (result != 'false') {
       let arrDataPTT = [];
       let data = result.PTTOR_DS.FUEL;
+      console.log(data);
       let time = result.PTTOR_DS.FUEL[0].PRICE_DATE._text;
       for (let i = 0; i < data.length; i++) {
         let color = '';

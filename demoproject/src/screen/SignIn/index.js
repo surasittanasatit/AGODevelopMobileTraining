@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { StatusBar, SafeAreaView, Image, TouchableOpacity, TextInput, Alert } from 'react-native';
 import { View, Text, Icon } from 'native-base';
+
 import IconsMaterialCommunity from 'react-native-vector-icons/MaterialCommunityIcons'
 import IconsFeather from 'react-native-vector-icons/Feather'
 import IconIonicons from 'react-native-vector-icons/Ionicons'
+
 import AsyncStorage from '@react-native-community/async-storage'
+
 import CheckBox from '@react-native-community/checkbox'
 import { connect } from 'react-redux'
 
@@ -41,6 +44,7 @@ class index extends Component {
   }
 
   handleCheckStatus = (result) => {
+    console.log(result);
     if (result.message == 'Run Server Success') {
       this.setState({ isStatusConnect: true })
     }
@@ -59,7 +63,7 @@ class index extends Component {
   render() {
     return (
       <View style={styles.layoutFx} >
-        <StatusBar translucent barStyle='light-content' />
+        <StatusBar translucent backgroundColor={'rgba(0,0,0,0.8)'} barStyle='light-content' />
         <SafeAreaView style={{ flex: 1 }} >
           <View style={styles.section}>
             <View style={styles.logo}>
