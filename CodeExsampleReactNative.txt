@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StatusBar, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
+import { Text, View, StatusBar, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native'
 
 export class App extends Component {
 
@@ -16,32 +16,40 @@ export class App extends Component {
       <View style={styles.layout}>
         <StatusBar backgroundColor={'#000000'} barStyle='light-content' />
         <View style={styles.layoutContect}>
-          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{ fontSize: 28, fontWeight: 'bold' }}>{'Hello React Native'}</Text>
+          <View style={{ backgroundColor: '#FFFFFF', paddingHorizontal: 10, paddingVertical: 10, borderRadius: 10 }}>
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{ fontSize: 28, fontWeight: 'bold' }}>{'Welcome'}</Text>
+              <Image source={require('./assets/images/react-native-logo.png')} resizeMode="contain" style={{ width: 170, height: 120, borderRadius: 20 }} />
+            </View>
+            <View style={styles.boxView}>
+              <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{'Username'}</Text>
+              <TextInput
+                placeholder={'Input Username'}
+                value={this.state.username}
+                onChangeText={(text) => this.setState({ username: text })}
+                style={styles.textInput}
+              />
+            </View>
+            <View style={styles.boxView}>
+              <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{'Password'}</Text>
+              <TextInput
+                placeholder={'Input Passwod'}
+                value={this.state.password}
+                onChangeText={(text) => this.setState({ password: text })}
+                style={styles.textInput}
+              />
+            </View>
+            <TouchableOpacity
+              style={styles.btnLogin}
+              onPress={() => { console.log(this.state.username) }} >
+              <Text style={styles.btnText}>{'Login'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.btnRegister}
+              onPress={() => { console.log(this.state.username) }} >
+              <Text style={styles.btnText}>{'Register'}</Text>
+            </TouchableOpacity>
           </View>
-          <View style={styles.boxView}>
-            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{'Username'}</Text>
-            <TextInput
-              placeholder={'Input Username'}
-              value={this.state.username}
-              onChangeText={(text) => this.setState({ username: text })}
-              style={{ borderWidth: 1, borderColor: '#9E9E9E' }}
-            />
-          </View>
-          <View style={styles.boxView}>
-            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{'Password'}</Text>
-            <TextInput
-              placeholder={'Input Passwod'}
-              value={this.state.password}
-              onChangeText={(text) => this.setState({ password: text })}
-              style={{ borderWidth: 1, borderColor: '#9E9E9E' }}
-            />
-          </View>
-          <TouchableOpacity 
-            style={styles.btnLogin}
-            onPress={() => {console.log(this.state.username)}} >
-            <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#FFFFFF' }}>{'Login'}</Text>
-          </TouchableOpacity>
         </View>
       </View>
     )
@@ -51,14 +59,15 @@ export class App extends Component {
 const styles = StyleSheet.create({
   layout: {
     flex: 1,
-    backgroundColor: '#9E9e9e'
+    backgroundColor: '#9E9e9e',
   },
   layoutContect: {
+    flex: 1,
     paddingHorizontal: 5,
     paddingVertical: 5,
-    backgroundColor: '#FFFFFF',
     marginHorizontal: 5,
-    marginVertical: 5
+    marginVertical: 5,
+    justifyContent: 'center',
   },
   boxView: {
     backgroundColor: '#FFFFFF',
@@ -69,7 +78,30 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingVertical: 10,
     paddingHorizontal: 10,
-    marginTop: 10
+    marginTop: 10,
+    alignItems: 'center',
+    borderRadius: 5
+  },
+  btnRegister: {
+    backgroundColor: '#194f90',
+    width: '100%',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    marginTop: 10,
+    alignItems: 'center',
+    borderRadius: 5
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#9E9E9E',
+    paddingHorizontal: 10,
+    borderRadius: 5
+  },
+  btnText:
+  {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: '#FFFFFF'
   }
 });
 
