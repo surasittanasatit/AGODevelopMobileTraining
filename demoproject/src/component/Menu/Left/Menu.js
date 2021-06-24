@@ -5,6 +5,14 @@ export const Data1 = [
     route: 'Home',
   },
   {
+    name: 'PTT Oil Price',
+    route: 'PTTOilPrice'
+  },
+  {
+    name: 'UserList',
+    route: 'UserList',
+  },
+  {
     name: 'SignOut',
     route: 'SignIn',
   },

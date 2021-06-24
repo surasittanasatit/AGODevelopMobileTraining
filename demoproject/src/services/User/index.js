@@ -19,6 +19,19 @@ const getUser = (hostUrl, username, password, handleGetUser) => {
     });
 }
 
+const getUserAll = (hostUrl, handleGetUserAll) => {
+    axios({
+        method: 'GET',
+        url: hostUrl + '/api/getAllUser',
+        responseType: 'json'
+    }).then(function (response) {
+        handleGetUserAll(response.data);
+    }).catch(function (error) {
+        handleGetUserAll(false);
+        console.log('Error GetUserAll :', error);
+    });
+}
+
 const registerUser = (hostUrl, objdata, handleRegisterUser) => {
     let data = {
         'username': objdata.username,
@@ -78,6 +91,7 @@ const deleteUser = (hostUrl, username, handleDeleteUser) => {
 
 export default {
     getUser,
+    getUserAll,
     registerUser,
     updateUser,
     deleteUser

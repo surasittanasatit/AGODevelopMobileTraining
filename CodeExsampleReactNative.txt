@@ -1,0 +1,76 @@
+import React, { Component } from 'react'
+import { Text, View, StatusBar, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
+
+export class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+    };
+  }
+
+  render() {
+    return (
+      <View style={styles.layout}>
+        <StatusBar backgroundColor={'#000000'} barStyle='light-content' />
+        <View style={styles.layoutContect}>
+          <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontSize: 28, fontWeight: 'bold' }}>{'Hello React Native'}</Text>
+          </View>
+          <View style={styles.boxView}>
+            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{'Username'}</Text>
+            <TextInput
+              placeholder={'Input Username'}
+              value={this.state.username}
+              onChangeText={(text) => this.setState({ username: text })}
+              style={{ borderWidth: 1, borderColor: '#9E9E9E' }}
+            />
+          </View>
+          <View style={styles.boxView}>
+            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{'Password'}</Text>
+            <TextInput
+              placeholder={'Input Passwod'}
+              value={this.state.password}
+              onChangeText={(text) => this.setState({ password: text })}
+              style={{ borderWidth: 1, borderColor: '#9E9E9E' }}
+            />
+          </View>
+          <TouchableOpacity 
+            style={styles.btnLogin}
+            onPress={() => {console.log(this.state.username)}} >
+            <Text style={{ fontSize: 17, fontWeight: 'bold', color: '#FFFFFF' }}>{'Login'}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  layout: {
+    flex: 1,
+    backgroundColor: '#9E9e9e'
+  },
+  layoutContect: {
+    paddingHorizontal: 5,
+    paddingVertical: 5,
+    backgroundColor: '#FFFFFF',
+    marginHorizontal: 5,
+    marginVertical: 5
+  },
+  boxView: {
+    backgroundColor: '#FFFFFF',
+    marginTop: 10
+  },
+  btnLogin: {
+    backgroundColor: 'rgba(0,0,0,0.8)',
+    width: '100%',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    marginTop: 10
+  }
+});
+
+export default App

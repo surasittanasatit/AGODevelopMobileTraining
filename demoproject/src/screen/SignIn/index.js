@@ -153,19 +153,24 @@ class index extends Component {
   }
 
   onClickSingIn = e => {
-    const { user_name, user_pass } = this.state;
-    ServicesAPi.User.getUser(this.props.configservice, user_name, user_pass, this.handleGetUser)
+    const { user_name, user_pass, isStatusConnect } = this.state;
+    if(isStatusConnect != false){
+      ServicesAPi.User.getUser(this.props.configservice, user_name, user_pass, this.handleGetUser)
+    }else{
+      Alert.alert('Message Alert!', 'Connect API Fail');
+      return;
+    }
   }
 
   handleGetUser = (result) => {
     const { user_name, user_pass, isChecked } = this.state;
     if (result.data.length != 0) {
       if (user_name == '') {
-        Alert.alert('ข้อความแจ้งเตือน', 'กรุณากรอก Username');
+        Alert.alert('Message Alert!', 'Input Username');
         return;
       }
       if (user_pass == '') {
-        Alert.alert('ข้อความแจ้งเตือน', 'กรุณากรอก Password');
+        Alert.alert('Message Alert!', 'Input Password');
         return;
       }
 

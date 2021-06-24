@@ -18,6 +18,9 @@ import SignIn from '@screen/SignIn'
 import CarDetail from '@screen/CarDetail'
 import Information from '@screen/Information'
 import Register from '@screen/Register'
+import PTTOilPrice from '@screen/PTTOilPrice'
+import UserList from '@screen/UserList'
+
 /* Navigation */
 import { navigationRef } from '@utility/navigation'
 
@@ -62,6 +65,8 @@ export default class App extends React.Component {
                         <Stack.Screen name='CarDetail' component={CarDetail} options={options} />
                         <Stack.Screen name='Information' component={Information} options={options} />
                         <Stack.Screen name='Register' component={Register} options={options} />
+                        <Stack.Screen name='PTTOilPrice' component={PTTOilPrice} options={options} />
+                        <Stack.Screen name='UserList' component={UserList} option={options} />
                     </Stack.Navigator>
                 </NavigationContainer>
             </StoreProvider>

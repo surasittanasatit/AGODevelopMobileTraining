@@ -10,6 +10,19 @@ module.exports = function (app) {
         res.status(200).json({ "message": "Run Server Success" })
     });
 
+    app.get("/api/getAllUser", (req, res, next) => {
+        db.all(`SELECT * FROM tb_user_info`, [], (err, rows) => {
+            if (err) {
+                res.status(400).json({ "error": err.message });
+                return;
+            }
+            res.status(200).json({
+                "message": "Success",
+                "data": rows
+            })
+        });
+    });
+
     app.post("/api/getUser", (req, res, next) => {
         var username = [req.body.username]
         var password = [req.body.password]
