@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
-import { requestNotifications } from 'react-native-permissions';
 import messaging from '@react-native-firebase/messaging';
+import { requestNotifications } from 'react-native-permissions';
+
 
 export class App extends Component {
   constructor(props) {
